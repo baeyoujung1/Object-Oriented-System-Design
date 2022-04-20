@@ -8,7 +8,7 @@ public class Watch {
 	
 	protected Calendar cal = Calendar.getInstance();
 	
-	public void onBlacklit() {
+	public void onBacklit() {
 		if (!backlitIsOn) {
 			System.out.println("Backlit ON!");
 		} else {
