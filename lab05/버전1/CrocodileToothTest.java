@@ -28,7 +28,7 @@ class CrocodileToothTest {
 	@Test
 	void toStringTest() {
 		CrocodileTooth soreTooth = new CrocodileTooth(true);
-		assertEquals("!!.... OUCH", soreTooth.toString());
+		assertEquals("!!.... OUCH!!!", soreTooth.toString());
 		
 		CrocodileTooth normalTooth = new CrocodileTooth(false);
 		assertEquals("Zzzzz...", normalTooth.toString());
