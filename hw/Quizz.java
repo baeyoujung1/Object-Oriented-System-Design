@@ -28,7 +28,7 @@ public class Quizz {
                 String read = file.canRead() ? "r" : "-";
                 String write = file.canWrite() ? "w" : "-";
                     
-                long size = folder.equals("d") ? 512 : file.length();            
+                long size = file.length();            
                 info = folder + execute + read + write;       
                 System.out.print(info);
                 System.out.printf("%12d", size);
