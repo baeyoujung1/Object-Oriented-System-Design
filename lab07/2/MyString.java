@@ -3,7 +3,7 @@ package lab07;
 import java.util.List;
 import java.util.ArrayList;
 
-public class MyString implements Comparable {
+public class MyString implements Comparable<MyString> {
    
    private String word;
    
@@ -20,7 +20,7 @@ public class MyString implements Comparable {
    }
    
    @Override
-   public int compareTo(Object obj) {
+   public int compareTo(MyString obj) {
       MyString another = (MyString) obj;
       if (getWord().toLowerCase().charAt(0) == another.getWord().toLowerCase().charAt(0)) {
          if (getWord().charAt(0) == another.getWord().charAt(0)) {
@@ -42,10 +42,10 @@ public class MyString implements Comparable {
    }
    
    public static List<MyString> getListFrom(String[] words) {
-      List<MyString> list = new ArrayList<>();
-      for (String word : words) {
-         list.add(new MyString(word));
+      List<MyString> myStrings = new ArrayList<>(words.length);
+      for (int i = 0; i < words.length; i++) {
+        myStrings.add(new MyString(words[i]));
       }
-      return list;
+      return myStrings;
    }
 }

@@ -2,9 +2,9 @@ package lab07;
 
 import java.util.List;
 
-public class SelectionSort {
+public class SelectionSort<T extends Comparable<T>> {
    
-   public static void sort(List<Comparable> inputArray) {
+   public void sort(List<T> inputArray) {
       int smallestIndex;
       for (int i = 0; i < inputArray.size() - 1; i++) {
          smallestIndex = findSmallestIndex(inputArray, i + 1);
@@ -13,16 +13,16 @@ public class SelectionSort {
          }
       }
    }
-   
-   public static void exchange(List<Comparable> inputArray, int a, int b) {
-      Comparable temp = inputArray.get(a);
+    
+   public void exchange(List<T> inputArray, int a, int b) {
+      T temp = inputArray.get(a);
       inputArray.set(a, inputArray.get(b));
       inputArray.set(b, temp);
    }
    
-   public static int findSmallestIndex(List<Comparable> inputArray, int starting) {
+   public int findSmallestIndex(List<T> inputArray, int starting) {
       int smallestIndex = starting;
-      Comparable smallestNumber = inputArray.get(starting);
+      T smallestNumber = inputArray.get(smallestIndex);
       for (int i = starting + 1; i < inputArray.size(); i++) {
          if (inputArray.get(i).compareTo(smallestNumber) < 0) {
             smallestIndex = i;
